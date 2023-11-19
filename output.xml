@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20231119 14:30:19.103" rpa="false" schemaversion="4">
+<suite id="s1" name="Casosdeteste" source="D:\UFPR\DS252 - Engenharia de Software II\atividade-robot\atividade-robot\casosdeteste.robot">
+<test id="s1-t1" name="CT03: Alterar o idioma do Spotify" line="25">
+<kw name="Abrir browser" library="resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231119 14:30:19.339" level="INFO">Opening browser 'firefox' to base url 'None'.</msg>
+<status status="PASS" starttime="20231119 14:30:19.339" endtime="20231119 14:30:25.865"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231119 14:30:25.865" endtime="20231119 14:30:26.125"/>
+</kw>
+<status status="PASS" starttime="20231119 14:30:19.338" endtime="20231119 14:30:26.125"/>
+</kw>
+<kw name="Acessar Spotify no endereço &quot;https://open.spotify.com/&quot;" library="resources" sourcename="Acessar Spotify no endereço &quot;${URL}&quot;">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231119 14:30:26.126" level="INFO">Opening url 'https://open.spotify.com/'</msg>
+<status status="PASS" starttime="20231119 14:30:26.125" endtime="20231119 14:30:28.166"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${TEXTO_PAG_INICIAL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231119 14:30:28.166" endtime="20231119 14:30:30.176"/>
+</kw>
+<status status="PASS" starttime="20231119 14:30:26.125" endtime="20231119 14:30:30.176"/>
+</kw>
+<kw name="Acessar o Modal de Idiomas" library="resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${BOTAO_IDIOMAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231119 14:30:30.177" level="INFO">Clicking element '//button[@data-testid='language-selection-button'][contains(.,'Português do Brasil')]'.</msg>
+<status status="PASS" starttime="20231119 14:30:30.177" endtime="20231119 14:30:30.634"/>
+</kw>
+<status status="PASS" starttime="20231119 14:30:30.176" endtime="20231119 14:30:30.634"/>
+</kw>
+<kw name="Alterar o Idioma para Inglês" library="resources">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//h1[@data-encore-id='type'][contains(.,'Escolha um idioma')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231119 14:30:30.635" endtime="20231119 14:30:30.666"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${BOTAO_IDIOMA_INGLES}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231119 14:30:30.666" level="INFO">Clicking element '//button[@class='Gf_hXbIvfUvlnE_jnkw8'][contains(.,'EnglishEnglish')]'.</msg>
+<status status="PASS" starttime="20231119 14:30:30.666" endtime="20231119 14:30:32.088"/>
+</kw>
+<status status="PASS" starttime="20231119 14:30:30.634" endtime="20231119 14:30:32.088"/>
+</kw>
+<kw name="Verificar se a Página Alterou para Inglês" library="resources">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//a[@draggable='false'][contains(.,'Spotify Playlists')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231119 14:30:32.089" endtime="20231119 14:30:33.914"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//a[@draggable='false'][contains(.,'Spotify Playlists')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231119 14:30:33.936" level="INFO">Element '//a[@draggable='false'][contains(.,'Spotify Playlists')]' is displayed.</msg>
+<status status="PASS" starttime="20231119 14:30:33.914" endtime="20231119 14:30:33.936"/>
+</kw>
+<status status="PASS" starttime="20231119 14:30:32.089" endtime="20231119 14:30:33.936"/>
+</kw>
+<kw name="Fechar browser" library="resources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20231119 14:30:34.075" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231119 14:30:33.936" endtime="20231119 14:30:34.075"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231119 14:30:34.076" endtime="20231119 14:30:37.918"/>
+</kw>
+<status status="PASS" starttime="20231119 14:30:33.936" endtime="20231119 14:30:37.918"/>
+</kw>
+<doc>Altera o idioma do Spotify</doc>
+<tag>configuracao</tag>
+<status status="PASS" starttime="20231119 14:30:19.338" endtime="20231119 14:30:37.918"/>
+</test>
+<doc>Demonstração do RobotFramework com o Spotify</doc>
+<status status="PASS" starttime="20231119 14:30:19.105" endtime="20231119 14:30:37.919"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">configuracao</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Casosdeteste">Casosdeteste</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
