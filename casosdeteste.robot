@@ -15,7 +15,7 @@ CT01: Fazer login no Spotify
     Verificar se o Login foi Efetuado
 
 CT02: Acessar Página de um Artista no Spotify
-    [Documentation]  Verifica se a página do artista é exibida corretamente
+    [Documentation]  Busca a página de um artista no Spotify
     [Tags]  busca     
     Acessar Spotify no endereço "https://open.spotify.com/"
     Buscar Artista
@@ -29,6 +29,15 @@ CT03: Alterar o idioma do Spotify
     Acessar o Modal de Idiomas
     Alterar o Idioma para Inglês
     Verificar se a Página Alterou para Inglês
+
+CT04: Buscar por uma Música no Spotify
+    [Documentation]  Busca por uma música no spotify
+    [Tags]  busca
+    Acessar Spotify no endereço "https://open.spotify.com/"
+    Buscar Música
+    Acessar Página da Música
+    Verificar se a Página da Música é exibida
+
 
 
 

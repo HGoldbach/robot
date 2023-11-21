@@ -17,6 +17,7 @@ ${TEXTO_LOGIN}                 //h1[@class='Type__TypeElement-sc-goli3j-0 jaaEvK
 ${TEXTO_PAG_INICIAL}           //a[@draggable='false'][contains(.,'Playlists do Spotify')]
 ${INSERIR_MUSICA}              //input[contains(@class,'Type__TypeElement-sc-goli3j-0 ieTwfQ QO9loc33XC50mMRUCIvf')]
 ${LINK_ARTISTA}                //div[contains(@class,'_gB1lxCfXeR8_Wze5Cx9')]
+${LINK_MUSICA}                 (//div[@class='iCQtmPqY0QvkumAOuCjr'][contains(.,'Fortunate SonCreedence Clearwater Revival')])[1]
 ${PLAY_MUSIC}                  //span[contains(@class,'ButtonInner-sc-14ud5tc-0 fGgTkO encore-bright-accent-set')]
 
 *** Keywords ***
@@ -70,5 +71,15 @@ Verificar se a Página Alterou para Inglês
     Wait Until Element Is Visible    locator=//a[@draggable='false'][contains(.,'Spotify Playlists')]
     Element Should Be Visible    locator=//a[@draggable='false'][contains(.,'Spotify Playlists')]
 
+Buscar Música
+    Wait Until Element Is Visible    ${TEXTO_PAG_INICIAL}
+    Click Element    locator=${BOTAO_BUSCAR}
+    Input Text    ${INSERIR_MUSICA}    Fortunate Son
 
+Acessar Página da Música
+    Wait Until Element Is Visible    locator=${LINK_MUSICA}
+    Click Element    locator=${LINK_MUSICA}
 
+Verificar se a Página da Música é exibida
+    Wait Until Element Is Visible    locator=${PLAY_MUSIC}
+    Element Should Be Visible    locator=//h1[@dir='auto'][contains(.,'Fortunate Son')]
